@@ -1,18 +1,18 @@
 import React from 'react'
 import MainLayout from '../../infratructure/common/layout/main-layout'
-import SearchArticle from './search'
 import BannerCommon from '../../infratructure/common/controls/banner'
 import { ROUTE_PATH } from '../../core/common/appRouter'
 import Constants from '../../core/common/constant'
+import SearchSpecialty from '../specialty/search'
 
-const ArticlePage = () => {
+const FestivalPage = () => {
     return (
         <MainLayout>
             <BannerCommon
-                title={"Bài viết hôm nay"}
+                title={"Lễ hội"}
                 redirect={ROUTE_PATH.HOME_PAGE}
                 redirectPage={"Trang chủ"}
-                currentPage={"Bài viết"}
+                currentPage={"Lễ hội"}
             />
             <section className="blog-list-section pt-100 pb-70">
                 <div className="container">
@@ -30,7 +30,7 @@ const ArticlePage = () => {
                                             </div>
                                             <h3 className="title"><a href="blog-details.html">{it.name} </a></h3>
                                             <h6 className="author"><i className="far fa-user"></i><a href="#">Matthew N. Davis</a></h6>
-                                            <a href={ROUTE_PATH.VIEW_ARTICLE} className="main-btn filled-btn">Xem thêm <i className="fas fa-paper-plane"></i></a>
+                                            <a href={ROUTE_PATH.VIEW_FESTIVAL} className="main-btn filled-btn">Xem thêm <i className="fas fa-paper-plane"></i></a>
                                         </div>
                                     </div>
                                 ))}
@@ -45,7 +45,7 @@ const ArticlePage = () => {
                             </ul>
                         </div>
                         <div className="col-xl-4">
-                            <SearchArticle />
+                            <SearchSpecialty />
                         </div>
                     </div>
                 </div>
@@ -54,4 +54,4 @@ const ArticlePage = () => {
     )
 }
 
-export default ArticlePage
+export default FestivalPage
