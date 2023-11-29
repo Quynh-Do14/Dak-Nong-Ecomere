@@ -6,9 +6,9 @@ import RelationArticle from '../../infratructure/common/controls/relation-articl
 import Constants from '../../core/common/constant'
 
 const AritcleDetail = () => {
-    const [detalArtical, setDetalArtical] = useState({});
+    const [detalArticle, setDetalArticle] = useState({});
     useEffect(() => {
-        setDetalArtical(Constants.DataTemplate.list[1])
+        setDetalArticle(Constants.DataTemplate.list[1])
     }, []);
     return (
         <MainLayout>
@@ -25,22 +25,22 @@ const AritcleDetail = () => {
                             <div class="blog-details-wrapper pr-lg-50">
                                 <div class="blog-post mb-60 wow fadeInUp">
                                     <div class="post-thumbnail">
-                                        <img src={detalArtical.img} alt="Blog Image" />
+                                        <img src={detalArticle.img} alt="Blog Image" />
                                     </div>
                                     <div class="post-meta text-center pt-25 pb-15 mb-25">
                                         <span><i class="far fa-user"></i><a href="#">Matthew N. Davis</a></span>
-                                        <span><i class="far fa-calendar-alt"></i><a href="#">{detalArtical.date} </a></span>
+                                        <span><i class="far fa-calendar-alt"></i><a href="#">{detalArticle.date} </a></span>
                                         <span><i class="far fa-comment"></i><a href="#">Lượt xem (05)</a></span>
                                     </div>
                                     <div class="main-post">
                                         <div class="entry-content">
-                                            <h3 class="title">{detalArtical.name} </h3>
-                                            <p>{detalArtical.description} </p>
+                                            <h3 class="title">{detalArticle.name} </h3>
+                                            <p>{detalArticle.description} </p>
                                             <h4>Build Camping Easily</h4>
-                                            <p>{detalArtical.description} </p>
+                                            <p>{detalArticle.description} </p>
                                             <blockquote class="block-quote">
                                                 <img src="assets/images/blog/quote.png" alt="quote image" />
-                                                <h3>{detalArtical.description} </h3>
+                                                <h3>{detalArticle.description} </h3>
                                                 <span>Johnny M. Martin</span>
                                             </blockquote>
                                         </div>
