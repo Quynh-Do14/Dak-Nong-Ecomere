@@ -1580,6 +1580,7 @@ button {
 .hero-search-form .booking-form-two .form_group {
   width: 18%;
 }
+
 @media (max-width: 1199px) {
   .hero-search-form .booking-form-two .form_group {
     width: 48%;

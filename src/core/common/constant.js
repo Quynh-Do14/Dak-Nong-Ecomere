@@ -136,5 +136,51 @@ export default class Constants {
         };
         static Confirmation = class { };
     };
+    static DataTemplate = class {
+        static list = [
+            {
+                name: 'Meet Skeleton Svelte Taile Was Sind For Reactive UIs',
+                address: "North Province, Maldives",
+                date: "NOVEMBER 15, 2022",
+                img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
+            },
+            {
+                name: 'Meet Skeleton Svelte Taile Was Sind For Reactive UIs',
+                address: "North Province, Maldives",
+                date: "NOVEMBER 15, 2022",
+                img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
+            },
+            {
+                name: 'Meet Skeleton Svelte Taile Was Sind For Reactive UIs',
+                address: "North Province, Maldives",
+                date: "NOVEMBER 15, 2022",
+                img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
+            },
 
+            {
+                name: 'Meet Skeleton Svelte Taile Was Sind For Reactive UIs',
+                address: "North Province, Maldives",
+                date: "NOVEMBER 15, 2022",
+                img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
+            },
+            {
+                name: 'Meet Skeleton Svelte Taile Was Sind For Reactive UIs',
+                address: "North Province, Maldives",
+                date: "NOVEMBER 15, 2022",
+                img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
+            },
+            {
+                name: 'Meet Skeleton Svelte Taile Was Sind For Reactive UIs',
+                address: "North Province, Maldives",
+                date: "NOVEMBER 15, 2022",
+                img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
+            }
+        ]
+    }
 };

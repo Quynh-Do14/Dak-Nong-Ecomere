@@ -1,13 +1,13 @@
 import React from 'react'
 import HeaderPage from './header'
-import Footer from './footer'
+import FooterPage from './footer'
 
 const MainLayout = (props) => {
     return (
         <div>
             <HeaderPage />
             <div>{props.children} </div>
-            <Footer />
+            <FooterPage />
         </div>
     )
 }
