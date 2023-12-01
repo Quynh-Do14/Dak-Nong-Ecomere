@@ -1,4 +1,8 @@
 import { ROUTE_PATH } from "./appRouter";
+import homePageImg1 from "../../asset/img/home1.jpg";
+import homePageImg2 from "../../asset/img/home2.jpg";
+import homePageImg3 from "../../asset/img/home3.jpg";
+import homePageImg4 from "../../asset/img/home4.jpg";
 
 export default class Constants {
     static Menu = class {
@@ -181,6 +185,28 @@ export default class Constants {
                 img: "https://ik.imagekit.io/tvlk/blog/2022/03/dia-diem-du-lich-dak-nong-2-1024x495.jpg?tr=dpr-2,w-675",
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Neque, labore ad ex maiores repellat a veniam illo.Eligendi cum dolor totam reiciendis commodi magni ad error aliquid ipsa repudiandae! Nemo."
             }
+        ]
+    }
+
+    static DataHomePage = class {
+        static list = [
+            {
+                name: "Địa điểm du lịch",
+                img: homePageImg1,
+            },
+            {
+                name: "Bài viết hôm nay",
+                img: homePageImg2,
+            },
+            {
+                name: "Khám phá ẩm thực",
+                img: homePageImg3,
+            },
+            {
+                name: "Lễ hội truyền thống",
+                img: homePageImg4,
+            },
+
         ]
     }
 };

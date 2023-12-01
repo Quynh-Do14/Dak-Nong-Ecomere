@@ -1,38 +1,46 @@
-import React from 'react'
-
+import React from 'react';
+import slide from "../../../asset/img/slide-banner.jpg";
+import slide1 from "../../../asset/img/slide-banner2.jpg";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_PATH } from '../../../core/common/appRouter';
+const dataImg = [
+    { img: slide },
+    { img: slide1 }
+]
 const SlideBanner = () => {
+    const navigate = useNavigate();
+
+    const onNavigate = () => {
+        navigate(ROUTE_PATH.DESTINATION)
+    }
+
+
     return (
-        <section className="hero-section">
-            <div className="hero-wrapper black-bg">
-                <div className="hero-slider-one">
-                    <div className="single-slider">
-                        <div className="container-fluid">
-                            <div className="row align-items-center">
-                                <div className="col-xl-6">
-                                    <div className="hero-content text-white">
-                                        <h1 data-animation="fadeInDown" data-delay=".4s">Du lịch &
-                                            trải nghiệm </h1>
-                                        <div className="text-button d-flex align-items-center">
-                                            <p data-animation="fadeInLeft" data-delay=".5s">
-                                                Đắk Nông có vẻ đẹp tự nhiên phong phú, hài hòa với những dòng thác xen lẫn núi đồi, thung lũng và rừng nguyên sinh.
-                                            </p>
-                                            <div className="hero-button" data-animation="fadeInRight" data-delay=".6s">
-                                                <a href="about.html" className="main-btn primary-btn">Xem thêm<i className="fas fa-paper-plane"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-6">
-                                    <div className="hero-image" data-animation="fadeInRight">
-                                        <img src="assets/images/hero/hero-one_img-1.jpg" alt="Hero Image" />
+        <Carousel showStatus={false} showThumbs={false}>
+            {dataImg.map((it, index) => (
+                <div key={index} className="single-slider">
+                    <img src={it.img} style={{ objectFit: "cover" }} alt="" className='img-banner' />
+                    <div className="nav-overlay acitve"></div>
+                    < div className="container-fluid positiion-slider" >
+                        <div className="row justify-content-center">
+                            <div className="col-md-10 col-xl-11 col-lg-10">
+                                <div className="hero-content text-white text-center">
+                                    <span className="ribbon">Du lịch & Trải nghiệm</span>
+                                    <h1 className='pt-10 pb-10' data-animation="fadeInDown" data-delay=".4s">Tận hưởng mọi khoảnh khắc của chuyến đi của bạn</h1>
+                                    <div className="hero-button" data-animation="fadeInRight" data-delay=".6s">
+                                        <a href={ROUTE_PATH.DESTINATION} className="main-btn primary-btn">Khám phá ngay<i className="fas fa-paper-plane"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            ))}
+
+
+        </Carousel >
     )
 }
 

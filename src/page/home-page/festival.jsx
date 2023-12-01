@@ -1,7 +1,15 @@
 import React from 'react'
 import Constants from '../../core/common/constant'
+import { ROUTE_PATH } from '../../core/common/appRouter';
+import { useNavigate } from 'react-router-dom';
+import { showImageCommon } from '../../infratructure/utils/helper';
 
-const Festival = () => {
+const Festival = ({ data = [] }) => {
+    const navigate = useNavigate();
+
+    const onNavigate = (id) => {
+        navigate(`${(ROUTE_PATH.VIEW_FESTIVAL)}?${id}`)
+    }
     return (
         <section className="service-section-two black-bg pt-100 pb-100">
             <div className="container">
@@ -13,18 +21,24 @@ const Festival = () => {
                     </div>
                 </div>
                 <div className="slider-active-3-item wow fadeInUp row">
-                    {Constants.DataTemplate.list.map((it, index) => (
+                    {data.map((it, index) => (
                         <div key={index} className="col-lg-4 col-md-6 col-sm-12">
                             <div className="single-service-item-four mb-40">
                                 <div className="img-holder">
-                                    <img src={it.img} alt="Service Image" />
+                                    <img src={
+                                        it.hinhAnh?.indexOf("http") == -1
+                                            ?
+                                            showImageCommon(it.hinhAnh)
+                                            :
+                                            it.hinhAnh
+                                    } height={180} alt="Service Image" className='object-cover' />
                                 </div>
                                 <div className="content">
-                                    <a href="#" className="icon-btn"><i className="fas fa-heart"></i></a>
-                                    <h3 className="title">{it.name} </h3>
-                                    <p>{it.description} </p>
+                                    <a className="icon-btn"><i className="fas fa-heart"></i></a>
+                                    <h3 className="title text-truncate-title">{it.tenDiaDiem} </h3>
+                                    <p className='text-truncate'>{it.moTa} </p>
                                     <div className="action-btn">
-                                        <a href="tour-details.html" className="main-btn primary-btn">Xem thêm<i className="far fa-paper-plane"></i></a>
+                                        <a onClick={() => onNavigate(it.idDiaDiem)} className="main-btn primary-btn  mt-10">Xem thêm<i className="far fa-paper-plane"></i></a>
                                     </div>
                                 </div>
                             </div>
