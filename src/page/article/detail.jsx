@@ -4,11 +4,37 @@ import MainLayout from '../../infratructure/common/layout/main-layout'
 import { ROUTE_PATH } from '../../core/common/appRouter'
 import RelationArticle from '../../infratructure/common/controls/relation-article'
 import Constants from '../../core/common/constant'
+import api from '../../infratructure/api'
+import { convertDateOnly, showImageCommon } from '../../infratructure/utils/helper'
+import { useLocation } from 'react-router-dom'
+import LoadingFullPage from '../../infratructure/common/controls/loading'
 
 const AritcleDetail = () => {
-    const [detalArticle, setDetalArticle] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [detailArticle, setDetailArticle] = useState({});
+    const [listTinTucLienQuan, setListTinTucLienQuan] = useState([]);
+
+    const location = useLocation()
+    const search = location.search.replace("?", "")
+    const onGetDetailTinTucAsync = async () => {
+        const response = await api.getAllTinTuc(
+            `loaitin/${search}?type=1`,
+            setLoading
+        )
+        setDetailArticle(response.tinTuc);
+
+    }
+    const onGetListTinTucAsync = async () => {
+        const response = await api.getAllTinTuc(
+            `loaitin?type=1&limit=3`,
+            setLoading
+        );
+        setListTinTucLienQuan(response.data.tinTucs);
+    };
+
     useEffect(() => {
-        setDetalArticle(Constants.DataTemplate.list[1])
+        onGetDetailTinTucAsync().then(_ => { });
+        onGetListTinTucAsync().then(_ => { });
     }, []);
     return (
         <MainLayout>
@@ -25,23 +51,29 @@ const AritcleDetail = () => {
                             <div class="blog-details-wrapper pr-lg-50">
                                 <div class="blog-post mb-60 wow fadeInUp">
                                     <div class="post-thumbnail">
-                                        <img src={detalArticle.img} alt="Blog Image" />
+                                        <img src={
+                                            detailArticle.hinhAnh?.indexOf("http") == -1
+                                                ?
+                                                showImageCommon(detailArticle.hinhAnh)
+                                                :
+                                                detailArticle.hinhAnh
+                                        } alt="Image" className='object-cover' />
                                     </div>
                                     <div class="post-meta text-center pt-25 pb-15 mb-25">
-                                        <span><i class="far fa-user"></i><a href="#">Matthew N. Davis</a></span>
-                                        <span><i class="far fa-calendar-alt"></i><a href="#">{detalArticle.date} </a></span>
-                                        <span><i class="far fa-comment"></i><a href="#">Lượt xem (05)</a></span>
+                                        <span><i class="far fa-user"></i><a></a></span>
+                                        <span><i className="far fa-calendar-alt"></i><a>{convertDateOnly(detailArticle.ngayDang)} </a></span>
+                                        <span> <i class="far fa-eye"></i> <a>Lượt xem ({detailArticle.luotXem})</a></span>
                                     </div>
                                     <div class="main-post">
                                         <div class="entry-content">
-                                            <h3 class="title">{detalArticle.name} </h3>
-                                            <p>{detalArticle.description} </p>
-                                            <h4>Build Camping Easily</h4>
-                                            <p>{detalArticle.description} </p>
+                                            <h3 class="title">{detailArticle.tieuDe} </h3>
+                                            <p>{detailArticle.tieuDeCon} </p>
+                                            <div className='post-meta mb-20'></div>
+                                            <h6>{detailArticle.moTaNgan} </h6>
                                             <blockquote class="block-quote">
                                                 <img src="assets/images/blog/quote.png" alt="quote image" />
-                                                <h3>{detalArticle.description} </h3>
-                                                <span>Johnny M. Martin</span>
+                                                <h6 className='text-align-left'>{detailArticle.chiTiet} </h6>
+                                                <span></span>
                                             </blockquote>
                                         </div>
                                     </div>
@@ -50,11 +82,13 @@ const AritcleDetail = () => {
                         </div>
                         <div class="col-xl-4">
                             <RelationArticle
-                                title={"Bài viết liên quan"} />
+                                title={"Bài viết liên quan"}
+                                data={listTinTucLienQuan} />
                         </div>
                     </div>
                 </div>
             </section>
+            <LoadingFullPage loading={loading} />
         </MainLayout >
     )
 }

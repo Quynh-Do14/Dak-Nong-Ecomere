@@ -26,7 +26,7 @@ const Destination = ({ data = [] }) => {
                         <div key={index} className="col-lg-4 col-md-6 col-sm-12">
                             <div key={index} class="single-service-item-three mb-40">
                                 <div class="content">
-                                    <h3 class="title text-truncate-title "><a>{it.tenDiaDiem} </a></h3>
+                                    <h3 class="title text-truncate-title"><a>{it.tenDiaDiem} </a></h3>
                                     <div>
                                         {ViewStarCommon(convertNumber(it.soSaoTrungBinh))}
                                     </div>

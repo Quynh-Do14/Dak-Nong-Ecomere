@@ -1,6 +1,14 @@
 import React from 'react'
 
-const SearchDestination = () => {
+const SearchDestination = (props) => {
+    const {
+        searchText,
+        onChangeSearchText,
+        dsQuanHuyen = [],
+        dsDanhMucDiaDiem = [],
+        onSelectDanhMuc,
+        onSelectQuanHuyen
+    } = props
     return (
         <section className="booking-form-section pb-100">
             <div className="container-fluid">
@@ -8,24 +16,29 @@ const SearchDestination = () => {
                     <form action="index-2.html" className="booking-form-two">
                         <div className="form_group">
                             <span>Tên địa điểm</span>
-                            <label><i className="far fa-calendar-alt"></i></label>
-                            <input type="text" className="form_control datepicker" placeholder="Check In" />
+                            <input value={searchText} onChange={onChangeSearchText} type="text" className="form_control datepicker" placeholder="Nhập tên địa điểm..." />
                         </div>
                         <div className="form_group">
-                            <span>Quận huyện</span>
-                            <select className="wide form_control">
-                                <option data-display="Accommodations">Accommodations</option>
-                                <option value="01">ClassNameic Tent</option>
-                                <option value="01">Forest Camping</option>
-                                <option value="01">Small Trailer</option>
-                                <option value="01">Tree House Tent</option>
-                                <option value="01">Tent Camping</option>
-                                <option value="01">Couple Tent</option>
+                            <span>Loại hình du lịch</span>
+                            <select onChange={onSelectDanhMuc} className="wide form_control">
+                                <option data-display="" value={""}>Loại hình du lịch</option>
+                                {dsDanhMucDiaDiem?.map((it, index) => (
+                                    <option key={index} value={it.idDanhMucDiaDiem}>{it.tenDanhMuc} </option>
+                                ))}
                             </select>
                         </div>
                         <div className="form_group">
-                            <button className="booking-btn">Tìm kiếm <i className="far fa-angle-double-right"></i></button>
+                            <span>Quận huyện</span>
+                            <select onChange={onSelectQuanHuyen} className="wide form_control">
+                                <option data-display="" value={""}>Quận huyện</option>
+                                {dsQuanHuyen?.map((it, index) => (
+                                    <option key={index} value={it.idQuanHuyen}>{it.tenQuanHuyen} </option>
+                                ))}
+                            </select>
                         </div>
+                        {/* <div className="btn-form-group">
+                            <button className="booking-btn">Tìm kiếm <i className="far fa-angle-double-right"></i></button>
+                        </div> */}
                     </form>
                 </div>
             </div>

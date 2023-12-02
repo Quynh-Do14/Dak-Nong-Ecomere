@@ -34,10 +34,11 @@ const api = {
   //   requestDuong.get(
   //     `${apiLinks.API}${Endpoint.Module.DiaDiem}/geometry?${params}`
   //   ),
-  // getDanhMucConCuaDanhMuc: (params) =>
-  //   requestDuong.get(
-  //     `${apiLinks.API}${Endpoint.Module.DiaDiem}/getDanhMucConCuaDanhMuc?${params}`
-  //   ),
+  getDanhMucConCuaDanhMuc: (params, setLoading) =>
+    request.get(
+      `${apiLinks.API}${Endpoint.Module.DiaDiem}/getDanhMucConCuaDanhMuc?${params}`,
+      setLoading
+    ),
   //////
   getAllDiaDiem: (params, setLoading) =>
     request.get(
@@ -72,8 +73,10 @@ const api = {
       setLoading
     ),
   ///////
-  getAllQuanHuyen: (params) =>
-    request.get(`${apiLinks.API}${Endpoint.Module.District}`),
+  getAllQuanHuyen: (params, setLoading) =>
+    request.get(`${apiLinks.API}${Endpoint.Module.District}`,
+      setLoading
+    ),
 
   getHinhAnhByIdDiaDiem: (params, setLoading) =>
     request.get(

@@ -4,11 +4,27 @@ import MainLayout from '../../infratructure/common/layout/main-layout'
 import { ROUTE_PATH } from '../../core/common/appRouter'
 import RelationArticle from '../../infratructure/common/controls/relation-article'
 import Constants from '../../core/common/constant'
+import { useLocation } from 'react-router-dom'
+import api from '../../infratructure/api'
+import LoadingFullPage from '../../infratructure/common/controls/loading'
+import { convertDateOnly, convertNumber, showImageCommon } from '../../infratructure/utils/helper'
+import { ViewStarCommon } from '../../infratructure/common/controls/view-star'
 
 const SpecialtyDetail = () => {
-    const [detalSpecialty, setDetalSpecialty] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [detailSpecialty, setDetailSpecialty] = useState({});
+    const location = useLocation()
+    const search = location.search.replace("?", "")
+    const onGetDetailDacSanAsync = async () => {
+        const response = await api.getDiaDiemById(
+            `dichvu/top/${search}?idDanhMuc=${Constants.CategoryConfig.Specialty.value}`,
+            setLoading
+        )
+        setDetailSpecialty(response.diaDiem);
+    }
+
     useEffect(() => {
-        setDetalSpecialty(Constants.DataTemplate.list[1])
+        onGetDetailDacSanAsync().then(_ => { });
     }, []);
     return (
         <MainLayout>
@@ -18,43 +34,38 @@ const SpecialtyDetail = () => {
                 redirectPage={"Đặc sản"}
                 currentPage={"Chi tiết đặc sản"}
             />
-            <section class="blog-details-section pt-100 pb-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="blog-details-wrapper pr-lg-50">
-                                <div class="blog-post mb-60 wow fadeInUp">
-                                    <div class="post-thumbnail">
-                                        <img src={detalSpecialty.img} alt="Blog Image" />
-                                    </div>
-                                    <div class="post-meta text-center pt-25 pb-15 mb-25">
-                                        <span><i class="far fa-user"></i><a href="#">Matthew N. Davis</a></span>
-                                        <span><i class="far fa-calendar-alt"></i><a href="#">{detalSpecialty.date} </a></span>
-                                        <span><i class="far fa-comment"></i><a href="#">Lượt xem (05)</a></span>
-                                    </div>
-                                    <div class="main-post">
-                                        <div class="entry-content">
-                                            <h3 class="title">{detalSpecialty.name} </h3>
-                                            <p>{detalSpecialty.description} </p>
-                                            <h4>Build Camping Easily</h4>
-                                            <p>{detalSpecialty.description} </p>
-                                            <blockquote class="block-quote">
-                                                <img src="assets/images/blog/quote.png" alt="quote image" />
-                                                <h3>{detalSpecialty.description} </h3>
-                                                <span>Johnny M. Martin</span>
-                                            </blockquote>
-                                        </div>
-                                    </div>
+            <section className="destination-details-section pt-100">
+                <div className="container">
+                    <div className="destination-details-wrapper">
+                        <div className="destination-info wow fadeInUp">
+                            <h3 className="title">{detailSpecialty.tenDiaDiem} </h3>
+                            <div className="meta">
+                                <span className="location"><i className="fas fa-map-marker-alt"></i>{detailSpecialty.diaChi} </span>
+                                <div>{ViewStarCommon(convertNumber(detailSpecialty.soSaoTrungBinh))}</div>
+                            </div>
+                            <div className="row mb-30">
+                                <div className="col-lg-12">
+                                    <img src={
+                                        detailSpecialty.hinhAnh?.indexOf("http") == -1
+                                            ?
+                                            showImageCommon(detailSpecialty.hinhAnh)
+                                            :
+                                            detailSpecialty.hinhAnh
+                                    } alt="Image" className='object-cover' />
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4">
-                            <RelationArticle
-                                title={"Đặc sản tương tự"} />
+                            <h3>Tại sao nên chọn {detailSpecialty.tenDiaDiem}</h3>
+                            <p>{detailSpecialty.moTa} </p>
+                            <ul className="features-list mb-40">
+                                <li><span><i class="fas fa-envelope"></i>Email liên hệ:{detailSpecialty.emailLienHe} </span></li>
+                                <li><span><i class="fas fa-phone"></i>Số điện thoại: {detailSpecialty.sdtLienHe} </span></li>
+                                <li><span><i className="fas fa-map-marker-alt"></i>{detailSpecialty.diaChi}</span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+            <LoadingFullPage loading={loading} />
         </MainLayout >
     )
 }

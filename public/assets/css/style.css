@@ -3913,7 +3913,7 @@ button {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 18.5%;
+  width: 30%;
 }
 
 @media (max-width: 1199px) {
@@ -6752,6 +6752,18 @@ ul.slick-dots li.slick-active {
 
 .single-slider .img-banner {
   height: 800px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.text-align-left {
+  text-align: left;
 }
 
 @media (max-width: 1199px) {

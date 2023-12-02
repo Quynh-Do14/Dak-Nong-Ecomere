@@ -1,8 +1,11 @@
 import React from 'react'
 import Constants from '../../../core/common/constant'
+import { ViewStarCommon } from './view-star';
+import { convertNumber, showImageCommon } from '../../utils/helper';
+import { ROUTE_PATH } from '../../../core/common/appRouter';
 
 const RelationDestination = (props) => {
-    const { title } = props;
+    const { title, data = [] } = props;
     return (
         <section className="places-seciton pt-95 pb-100">
             <div className="container">
@@ -14,29 +17,29 @@ const RelationDestination = (props) => {
                     </div>
                 </div>
                 <div className="slider-active-3-item-dot wow fadeInUp row">
-                    {Constants.DataTemplate.list.map((it, index) => (
+                    {data.map((it, index) => (
                         <div key={index} className="col-xl-4 col-md-6 col-sm-12 places-column">
                             <div className="single-place-item mb-60">
                                 <div className="place-img">
-                                    <img src={it.img} alt="Place Image" />
+                                    <img src={
+                                        it.hinhAnh?.indexOf("http") == -1
+                                            ?
+                                            showImageCommon(it.hinhAnh)
+                                            :
+                                            it.hinhAnh
+                                    } height={220} alt="Image" className='object-cover' />
                                 </div>
                                 <div className="place-content">
                                     <div className="info">
-                                        <ul className="ratings">
-                                            <li><i className="fas fa-star"></i></li>
-                                            <li><i className="fas fa-star"></i></li>
-                                            <li><i className="fas fa-star"></i></li>
-                                            <li><i className="fas fa-star"></i></li>
-                                            <li><i className="fas fa-star"></i></li>
-                                            <li><a href="#">(4.9)</a></li>
-                                        </ul>
-                                        <h4 className="title"><a href="tour-details.html">{it.name} </a></h4>
-                                        <p className="location"><i className="fas fa-map-marker-alt"></i>North Province, Maldives</p>
-                                        <p className="price"><i className="fas fa-usd-circle"></i>Price<span className="currency">$</span>93.65</p>
+                                        <div>{ViewStarCommon(convertNumber(it.soSaoTrungBinh))}</div>
+                                        <h4 className="title text-truncate-title"><a>{it.tenDiaDiem} </a></h4>
+                                        <p className="location text-truncate-title"><i className="far fa-map-marker-alt "></i>{it.diaChi} </p>
+                                        <p className="price"><i className="fas fa-usd-circle"></i> {it.giaVe === Constants.FreePrice || Constants.Undefined ? it.giaVe : `Chỉ từ: ${it.giaVe}`}</p>
                                         <div className="meta">
-                                            <span><i className="far fa-clock"></i>05 Days</span>
-                                            <span><i className="far fa-user"></i>25</span>
-                                            <span><a href="tour-details.html">Details<i className="far fa-long-arrow-right"></i></a></span>
+                                            <span><i className="far fa-clock"></i>{it.gioMoCua} </span>
+                                            <span>-</span>
+                                            <span><i className="far fa-clock"></i>{it.gioDongCua} </span>
+                                            <span><a href={`${ROUTE_PATH.VIEW_DESTINATION}?${it.idDiaDiem}`}>Xem chi tiết<i className="far fa-long-arrow-right"></i></a></span>
                                         </div>
                                     </div>
                                 </div>

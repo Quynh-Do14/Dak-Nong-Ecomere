@@ -4,11 +4,29 @@ import MainLayout from '../../infratructure/common/layout/main-layout'
 import { ROUTE_PATH } from '../../core/common/appRouter'
 import RelationArticle from '../../infratructure/common/controls/relation-article'
 import Constants from '../../core/common/constant'
+import { useLocation } from 'react-router-dom'
+import api from '../../infratructure/api'
+import LoadingFullPage from '../../infratructure/common/controls/loading'
+import { convertDateOnly, convertNumber, showImageCommon } from '../../infratructure/utils/helper'
+import { ViewStarCommon } from '../../infratructure/common/controls/view-star'
 
 const FestivalDetail = () => {
-    const [detalFestival, setDetalFestival] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [detailFestival, setDetailFestival] = useState({});
+    const [isOpenListImage, setIsOpenListImage] = useState(false);
+
+    const location = useLocation();
+    const search = location.search.replace("?", "");
+    const onGetDetailDiemDenAsync = async () => {
+        const response = await api.getDiaDiemById(
+            `dichvu/top/${search}?idDanhMuc=${Constants.CategoryConfig.Festival.value}`,
+            setLoading
+        );
+        setDetailFestival(response.diaDiem);
+    };
+
     useEffect(() => {
-        setDetalFestival(Constants.DataTemplate.list[1])
+        onGetDetailDiemDenAsync().then((_) => { });
     }, []);
     return (
         <MainLayout>
@@ -18,43 +36,42 @@ const FestivalDetail = () => {
                 redirectPage={"Lễ hội"}
                 currentPage={"Chi tiết Lễ hội"}
             />
-            <section class="blog-details-section pt-100 pb-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="blog-details-wrapper pr-lg-50">
-                                <div class="blog-post mb-60 wow fadeInUp">
-                                    <div class="post-thumbnail">
-                                        <img src={detalFestival.img} alt="Blog Image" />
-                                    </div>
-                                    <div class="post-meta text-center pt-25 pb-15 mb-25">
-                                        <span><i class="far fa-user"></i><a href="#">Matthew N. Davis</a></span>
-                                        <span><i class="far fa-calendar-alt"></i><a href="#">{detalFestival.date} </a></span>
-                                        <span><i class="far fa-comment"></i><a href="#">Lượt xem (05)</a></span>
-                                    </div>
-                                    <div class="main-post">
-                                        <div class="entry-content">
-                                            <h3 class="title">{detalFestival.name} </h3>
-                                            <p>{detalFestival.description} </p>
-                                            <h4>Build Camping Easily</h4>
-                                            <p>{detalFestival.description} </p>
-                                            <blockquote class="block-quote">
-                                                <img src="assets/images/blog/quote.png" alt="quote image" />
-                                                <h3>{detalFestival.description} </h3>
-                                                <span>Johnny M. Martin</span>
-                                            </blockquote>
-                                        </div>
-                                    </div>
+            <section className="destination-details-section pt-100">
+                <div className="container">
+                    <div className="destination-details-wrapper">
+                        <div className="destination-info wow fadeInUp">
+                            <h3 className="title">{detailFestival.tenDiaDiem} </h3>
+                            <div className="meta">
+                                <span className="location"><i className="fas fa-map-marker-alt"></i>{detailFestival.diaChi} </span>
+                                <div>{ViewStarCommon(convertNumber(detailFestival.soSaoTrungBinh))}</div>
+                            </div>
+                            <div className="row mb-30">
+                                <div className="col-lg-12">
+                                    <img src={
+                                        detailFestival.hinhAnh?.indexOf("http") == -1
+                                            ?
+                                            showImageCommon(detailFestival.hinhAnh)
+                                            :
+                                            detailFestival.hinhAnh
+                                    } alt="Image" className='object-cover' />
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4">
-                            <RelationArticle
-                                title={"Lễ hội tương tự"} />
+                            <h3>Tại sao nên chọn {detailFestival.tenDiaDiem}</h3>
+                            <p>{detailFestival.moTa} </p>
+                            <ul className="features-list mb-40">
+                                <li><span>
+                                    <i className="far fa-clock"></i>Thời gian: {convertDateOnly(detailFestival.gioMoCua)} - {convertDateOnly(detailFestival.gioDongCua)}
+                                </span></li>
+                                <li><span><i className="fas fa-usd-circle"></i>Giá vé: {detailFestival.giaVe === Constants.FreePrice || Constants.Undefined ? detailFestival.giaVe : `Chỉ từ: ${detailFestival.giaVe}`}</span></li>
+                                <li><span><i class="fas fa-envelope"></i>Email liên hệ:{detailFestival.emailLienHe} </span></li>
+                                <li><span><i class="fas fa-phone"></i>Số điện thoại: {detailFestival.sdtLienHe} </span></li>
+                                <li><span><i className="fas fa-map-marker-alt"></i>{detailFestival.diaChi}</span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+            <LoadingFullPage loading={loading} />
         </MainLayout >
     )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import banner from '../../../asset/img/banner.png'
 const BannerCommon = (props) => {
     const { title, redirect, redirectPage, currentPage } = props;
     return (
-        <section className="page-banner overlay pt-170 pb-220 bg_cover" style={{ backgroundImage: "url(assets/images/bg/page-bg.jpg)" }}>
+        <section className="page-banner overlay pt-170 pb-220 bg_cover" style={{ backgroundImage: `url(${banner})` }}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-10">
