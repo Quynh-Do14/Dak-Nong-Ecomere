@@ -6766,6 +6766,10 @@ ul.slick-dots li.slick-active {
   text-align: left;
 }
 
+.btn-confirm {
+  width: 100px;
+}
+
 @media (max-width: 1199px) {
   .container-fluid.positiion-slider {
     top: 170px;

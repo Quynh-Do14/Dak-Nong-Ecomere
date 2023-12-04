@@ -1,9 +1,21 @@
 import React, { useState } from 'react'
 import Constants from '../../../core/common/constant';
+import LoginPopup from '../popup/login-popup';
+import LoadingFullPage from '../controls/loading';
+import { ROUTE_PATH } from '../../../core/common/appRouter';
+import { SuccessMessage } from '../toast/toastMessage';
+import { useNavigate } from 'react-router-dom';
+import ConfirmModal from '../popup/confirm-modal';
+import RegisterPopup from '../popup/register-modal';
 
 const HeaderPage = () => {
     const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+    const [isOpenPopupLogin, setIsOpenPopupLogin] = useState(false);
+    const [isOpenModalRegister, setIsOpenModalRegister] = useState(false);
+    const [isOpenModalLogout, setIsOpenModalLogout] = useState(false);
 
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const onOpenMobileMenu = () => {
         setIsOpenMobileMenu(true);
     }
@@ -11,6 +23,40 @@ const HeaderPage = () => {
     const onCloseMobileMenu = () => {
         setIsOpenMobileMenu(false);
     }
+
+    const onOpenPopupLogin = () => {
+        setIsOpenPopupLogin(true);
+    }
+
+    const onClosePopupLogin = () => {
+        setIsOpenPopupLogin(false);
+    }
+    let storage = sessionStorage.getItem(Constants.TOKEN);
+
+    const onLogout = () => {
+        sessionStorage.clear();
+        onCloseModalLogout();
+        navigate(ROUTE_PATH.HOME_PAGE);
+        window.location.reload();
+        SuccessMessage("Đăng  xuất thành công", "Bạn đã đăng xuất khỏi hệ thống")
+    };
+
+    const onOpenModalLogout = () => {
+        setIsOpenModalLogout(true);
+    }
+
+    const onCloseModalLogout = () => {
+        setIsOpenModalLogout(false);
+    }
+
+    const onOpenModalRegister = () => {
+        setIsOpenModalRegister(true);
+    }
+
+    const onCloseModalRegister = () => {
+        setIsOpenModalRegister(false);
+    }
+
     return (
         <div>
             <header className="header-area header-two transparent-header bg-black menu-desktop">
@@ -34,14 +80,27 @@ const HeaderPage = () => {
                                     </ul>
                                 </nav>
                             </div>
-                            <div className="nav-right-item">
-                                <div className="menu-button d-xl-block d-none">
-                                    <a href="contact.html" className="main-btn primary-btn">Đăng nhập
-                                        <i>
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
-                                        </i>
-                                    </a>
-                                </div>
+                            <div className="nav-right-item pointer">
+                                {
+                                    storage
+                                        ?
+                                        <div className="menu-button d-xl-block d-none">
+                                            <a onClick={onOpenModalLogout} className="main-btn primary-btn">Đăng xuất
+                                                <i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
+                                                </i>
+                                            </a>
+                                        </div>
+                                        :
+                                        <div className="menu-button d-xl-block d-none">
+                                            <a onClick={onOpenPopupLogin} className="main-btn primary-btn">Đăng nhập
+                                                <i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
+                                                </i>
+                                            </a>
+                                        </div>
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -89,13 +148,26 @@ const HeaderPage = () => {
                                     </li>
                                 ))}
                                 <li>
-                                    <div className="menu-button mt-40 d-xl-none">
-                                        <a href={""} className="main-btn secondary-btn">Đăng nhập
-                                            <i>
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
-                                            </i>
-                                        </a>
-                                    </div>
+                                    {
+                                        storage
+                                            ?
+                                            <div className="menu-button mt-40 d-xl-none pointer">
+                                                <a onClick={onOpenModalLogout} className="main-btn secondary-btn">Đăng kí
+                                                    <i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
+                                                    </i>
+                                                </a>
+                                            </div>
+                                            :
+                                            <div className="menu-button mt-40 d-xl-none pointer">
+                                                <a onClick={onOpenPopupLogin} className="main-btn secondary-btn">Đăng nhập
+                                                    <i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
+                                                    </i>
+                                                </a>
+                                            </div>
+                                    }
+
                                 </li>
                             </ul>
                         </nav>
@@ -103,6 +175,28 @@ const HeaderPage = () => {
                 </div>
             </header >
             <div className={`${!isOpenMobileMenu ? "nav-overlay" : "nav-overlay active"}`}></div>
+            <LoginPopup
+                title={"Đăng nhập"}
+                visible={isOpenPopupLogin}
+                onCancel={onClosePopupLogin}
+                setLoading={setLoading}
+                onOpenRegister={onOpenModalRegister}
+            />
+
+            <RegisterPopup
+                title={"Đăng Kí"}
+                visible={isOpenModalRegister}
+                onCancel={onCloseModalRegister}
+                setLoading={setLoading}
+            />
+            <ConfirmModal
+                title={'Đăng xuất'}
+                message={"Bạn có muốn đăng xuất khỏi hệ thống"}
+                visible={isOpenModalLogout}
+                onOk={onLogout}
+                onCancel={onCloseModalLogout}
+            />
+            <LoadingFullPage loading={loading} />
         </div >
     )
 }

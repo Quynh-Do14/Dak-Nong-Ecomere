@@ -91,7 +91,7 @@ const DestinationPage = () => {
                 title={"Khám phá các địa điểm du lịch"}
                 redirect={ROUTE_PATH.HOME_PAGE}
                 redirectPage={"Trang chủ"}
-                currentPage={"Địa điểm du lịch"}
+                currentPage={"Điểm du lịch"}
             />
             <SearchDestination
                 searchText={searchText}
