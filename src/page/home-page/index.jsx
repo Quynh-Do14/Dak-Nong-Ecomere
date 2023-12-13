@@ -100,7 +100,7 @@ export const HomePage = () => {
             <MainLayout>
                 <SlideBanner />
                 {/* //////////// */}
-                <section className="features-section pt-100">
+                {/* <section className="features-section pt-100">
                     <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-xl-8">
@@ -124,6 +124,37 @@ export const HomePage = () => {
                                             </div>
                                         </div>
                                     </a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section> */}
+                <section className="about-section pt-100">
+                    <div className="container-fluid">
+                        <div className="row justify-content-center">
+                            <div className="col-xl-6 col-lg-9">
+                                <div className="about-content-box text-center mb-55 wow fadeInDown">
+                                    <div className="section-title mb-30">
+                                        <h2>Khám phá du lịch Đắk Nông </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="slider-active-4-item wow fadeInUp row">
+                            {Constants.DataHomePage.list.map((it, index) => (
+                                <div key={index} className="single-features-item mb-40 col-xl-3 col-md-6 col-sm-12">
+                                    <div className="img-holder">
+                                        <img src={it.img} alt="Features Image" height={420} />
+                                        <div className="content">
+                                            <div className="text">
+                                                <h4 className="title">{it.name} </h4>
+                                                <a href={it.link} className="icon-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" fill='#fff' /></svg>
+                                                </a>
+                                            </div>
+                                            <p>{it.description}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
                         </div>

@@ -195,21 +195,25 @@ export default class Constants {
                 name: "Địa điểm du lịch",
                 img: homePageImg1,
                 link: ROUTE_PATH.DESTINATION,
+                description: "Khám phá những địa điểm du lịch mới",
             },
             {
                 name: "Bài viết hôm nay",
                 img: homePageImg2,
                 link: ROUTE_PATH.ARTICLE,
+                description: "Đọc những bài viết, tin tức mới nhất",
             },
             {
                 name: "Khám phá ẩm thực",
                 img: homePageImg3,
                 link: ROUTE_PATH.SPECIALTY,
+                description: "Khám phá ẩm thực phong phú tại vùng đất này",
             },
             {
                 name: "Lễ hội truyền thống",
                 img: homePageImg4,
                 link: ROUTE_PATH.FESTIVAL,
+                description: "Tìm hiểu các lễ hội truyền thống",
             },
 
         ]
