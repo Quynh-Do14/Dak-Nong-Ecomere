@@ -111,17 +111,19 @@ export const HomePage = () => {
                         </div>
                         <div className="row">
                             {Constants.DataHomePage.list.map((it, index) => (
-                                <div key={index} className="col-xl-3 col-md-6 col-sm-12">
-                                    <div className="single-features-item-two mb-40 wow fadeInUp">
-                                        <div className="img-holder">
-                                            <img src={it.img} alt="Features Image" width={300} height={350} className='bject-cover' />
-                                            <div className="item-overlay">
-                                                <div className="content">
-                                                    <h5 className="color-white title white-space-nowrap">{it.name}</h5>
+                                <div key={index} className="col-xl-3 col-md-6 col-sm-12 pointer">
+                                    <a href={it.link} >
+                                        <div className="single-features-item-two mb-40 wow fadeInUp">
+                                            <div className="img-holder">
+                                                <img src={it.img} alt="Features Image" width={300} height={350} className='bject-cover' />
+                                                <div className="item-overlay">
+                                                    <div className="content">
+                                                        <h5 className="color-white title white-space-nowrap">{it.name}</h5>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             ))}
                         </div>
