@@ -117,7 +117,7 @@ export const HomePage = () => {
                                             <img src={it.img} alt="Features Image" width={300} height={350} className='bject-cover' />
                                             <div className="item-overlay">
                                                 <div className="content">
-                                                    <h3 className="title white-space-nowrap">{it.name}</h3>
+                                                    <h5 className="color-white title white-space-nowrap">{it.name}</h5>
                                                 </div>
                                             </div>
                                         </div>

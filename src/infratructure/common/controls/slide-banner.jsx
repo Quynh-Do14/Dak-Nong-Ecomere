@@ -18,29 +18,31 @@ const SlideBanner = () => {
 
 
     return (
-        <Carousel showStatus={false} showThumbs={false}>
-            {dataImg.map((it, index) => (
-                <div key={index} className="single-slider">
-                    <img src={it.img} style={{ objectFit: "cover" }} alt="" className='img-banner' />
-                    <div className="nav-overlay acitve"></div>
-                    < div className="container-fluid positiion-slider" >
-                        <div className="row justify-content-center">
-                            <div className="col-md-10 col-xl-11 col-lg-10">
-                                <div className="hero-content text-white text-center">
-                                    <span className="ribbon">Du lịch & Trải nghiệm</span>
-                                    <h1 className='pt-10 pb-10' data-animation="fadeInDown" data-delay=".4s">Tận hưởng mọi khoảnh khắc của chuyến đi của bạn</h1>
-                                    <div className="hero-button" data-animation="fadeInRight" data-delay=".6s">
-                                        <a href={ROUTE_PATH.DESTINATION} className="main-btn primary-btn">Khám phá ngay<i className="fas fa-paper-plane"></i></a>
-                                    </div>
+        <section class="hero-section bg-white">
+            <div class="hero-wrapper-four">
+                <div class="shape"><span><img src="assets/images/hero/map.png" alt="" /></span></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7">
+                            <div class="hero-content">
+                                <span class="sub-title wow fadeInUp" data-wow-delay=".3s">Du lịch & Trải nghiệm</span>
+                                <h1 class="wow fadeInDown" data-wow-delay=".5s">Chào mừng đến với Đắk Nông</h1>
+                                <p class="wow fadeInUp" data-wow-delay=".6s">Tận hưởng mọi khoảnh khắc của chuyến đi của bạn.<br />
+                                    Một chuyến đi không chỉ là sự di chuyển, đó là một hành trình trải nghiệm</p>
+                                <div className="hero-button" data-animation="fadeInRight" data-delay=".6s">
+                                    <a href={ROUTE_PATH.DESTINATION} className="main-btn primary-btn">Khám phá ngay<i className="fas fa-paper-plane"></i></a>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 d-xl-block d-none">
+                            <div class="hero-image wow fadeInRight" data-wow-delay=".8s">
+                                <img src={slide} alt="hero image" />
                             </div>
                         </div>
                     </div>
                 </div>
-            ))}
-
-
-        </Carousel >
+            </div>
+        </section>
     )
 }
 
