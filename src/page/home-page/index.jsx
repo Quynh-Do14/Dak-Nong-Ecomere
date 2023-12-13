@@ -14,6 +14,7 @@ import { ROUTE_PATH } from '../../core/common/appRouter'
 import homepage5 from '../../asset/img/home5.jpg'
 import homepage6 from "../../asset/img/slide-banner.jpg";
 import homepage7 from '../../asset/img/home7.jpg'
+import quangtruong from '../../asset/img/quangtruong.jpg'
 export const HomePage = () => {
     const [loading, setLoading] = useState(false);
     const [listTinTuc, setListTinTuc] = useState([]);
@@ -129,7 +130,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </section> */}
-                <section className="about-section pt-100">
+                {/* <section className="about-section pt-100">
                     <div className="container-fluid">
                         <div className="row justify-content-center">
                             <div className="col-xl-6 col-lg-9">
@@ -157,6 +158,89 @@ export const HomePage = () => {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section> */}
+                {/* <section className="features-section gray-bg pt-100 pb-100">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="section-title mb-55 wow fadeInLeft">
+                                    <span className="sub-title">Trải nghiệm</span>
+                                    <h2>Khám phá du lịch Đắk Nông</h2>
+                                </div>
+                            </div>
+                            <div className="col-lg-6">
+                                <div className="features-content-box pl-lg-70 wow fadeInRight">
+                                    <p className="mb-25">{Constants.Slogan} </p>
+                                    <div className="row justify-content-center">
+                                        <div className="col-sm-4 col-6">
+                                            <div className="counter-item mb-55">
+                                                <h2 className="number"><span className="count">356</span>+</h2>
+                                                <p>Chuyến đi</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-sm-4 col-6">
+                                            <div className="counter-item mb-55">
+                                                <h2 className="number"><span className="count">852</span>+</h2>
+                                                <p>Tent Sites</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-sm-4 col-6">
+                                            <div className="counter-item mb-55">
+                                                <h2 className="number"><span className="count">99</span>%</h2>
+                                                <p>Positive Reviews</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="slider-active-5-item wow fadeInUp row">
+                            {Constants.DataHomePage.list.map((it, index) => (
+                                <div key={index} className="single-features-item-three col-xl-3 col-md-3 col-sm-6">
+                                    <div className="img-holder">
+                                        <img src={it.img} alt="Features Image" height={200} />
+                                    </div>
+                                    <div className="content pointer">
+                                        <h6>{it.name} </h6>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section> */}
+                <section className="who-we-section pt-100 pb-50">
+                    <div className="container">
+                        <div className="row align-items-xl-center">
+                            <div className="col-xl-5 order-2 order-xl-1">
+                                <div className="we-image-box text-center text-xl-left pr-lg-30 mb-50 wow fadeInLeft">
+                                    <img src={quangtruong} className="radius-top-left-right-288 box-shadow" alt="What We Image" />
+                                </div>
+                            </div>
+                            <div className="col-xl-7 order-1 order-xl-2">
+                                <div className="we-contnet-box mb-20 wow fadeInRight">
+                                    <div className="section-title mb-45">
+                                        <span className="sub-title">Trải nghiệm</span>
+                                        <h2>Khám phá du lịch Đắk Nông</h2>
+                                    </div>
+                                    <div className="row">
+                                        {Constants.DataHomePage.list.map((it, index) => (
+                                            <div key={index} className="col-md-6">
+                                                <div className="fancy-icon-box-three mb-30">
+                                                    <img className='icon' src={it.img} />
+                                                    <div className="text">
+                                                        <h5 className="title">{it.name} </h5>
+                                                        <a href={it.link} className="btn-link">Xem thêm
+                                                            <i className="fas fa-arrow-right"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

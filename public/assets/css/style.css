@@ -791,10 +791,11 @@ button {
 
 .btn-link {
   text-transform: capitalize;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
   text-decoration: underline;
+  color: #212519 !;
 }
 
 .btn-link i {
@@ -2613,6 +2614,7 @@ button {
   padding: 10px 50px 10px 10px;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .fancy-icon-box-three:hover .text h5.title {
@@ -3252,7 +3254,7 @@ button {
 
 .radius-top-left-right-288 {
   border-radius: 288px 288px 0px 0px;
-  height: 600px;
+  height: 500px;
 }
 
 .video-popup {
@@ -6923,4 +6925,15 @@ h2 {
   font-size: 36px !important;
   font-weight: 700 !important;
   line-height: 1.2 !important;
+}
+
+.quang-truong {
+  width: 100%;
+  height: 200px;
+  /* border-radius: 287.5px 287.5px 0px 0px; */
+  object-fit: cover;
+}
+
+.box-shadow {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
