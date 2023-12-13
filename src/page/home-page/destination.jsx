@@ -30,7 +30,7 @@ const Destination = ({ data = [] }) => {
                                     <div>
                                         {ViewStarCommon(convertNumber(it.soSaoTrungBinh))}
                                     </div>
-                                    <p className='text-truncate'>{it.moTa} </p>
+                                    <p className='text-truncate-7-5'>{it.moTa} </p>
                                     <img src={
                                         it.hinhAnh?.indexOf("http") == -1
                                             ?

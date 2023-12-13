@@ -12,11 +12,11 @@ const Articles = ({ data = [] }) => {
     }
 
     return (
-        <section className="activity-section-four pt-100 pb-100 black-bg pb-60">
+        <section className="activity-section-four pt-100 pb-100 bg-body pb-60">
             <div className="row justify-content-center">
                 <div className="col-xl-7">
                     <div className="section-title text-center text-white mb-45 wow fadeInDown">
-                        <h2>Bài viết hôm nay </h2>
+                        <h2 className='color-black'>Bài viết hôm nay </h2>
                     </div>
                 </div>
             </div>
@@ -44,8 +44,8 @@ const Articles = ({ data = [] }) => {
                                         <div className="rate"><i className="fas fa-star"></i>4.9</div>
                                     </div> */}
                                 <h3 className="title text-truncate-title ">{it.tieuDe} </h3>
-                                <span><i className="far fa-calendar-alt mr-10"></i><a>{convertDateOnly(it.ngayDang)} </a></span>
-                                <p className='text-truncate'>{it.tieuDeCon} </p>
+                                <span className='mt-10 mb-10'><i className="far fa-calendar-alt mr-10"></i><a>{convertDateOnly(it.ngayDang)} </a></span>
+                                <p className='text-truncate-7-5'>{it.tieuDeCon} </p>
                                 <a onClick={() => onNavigate(it.idTinTuc)} className="main-btn filled-btn">Xem thêm<i className="fas fa-paper-plane"></i></a>
                             </div>
                         </div>

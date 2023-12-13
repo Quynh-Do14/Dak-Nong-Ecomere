@@ -3,7 +3,7 @@ import React from 'react'
 const FooterPage = () => {
     return (
         <div>
-            <footer className="main-footer black-bg pt-50">
+            <footer className="main-footer bg-light pt-50">
                 <div className="container">
                     <div className="footer-widget-area pb-30">
                         <div className="row">
@@ -16,7 +16,7 @@ const FooterPage = () => {
                                             <br />
                                             Đắk Nông, vùng đất tuyệt vời !
                                         </p>
-                                        <a href="#" className="footer-logo"><img src="assets/images/logo/logo-white.png" alt="Site Logo" /></a>
+                                        <a href="#" className="footer-logo"><img src="assets/images/logo/logo-black.png" alt="Site Logo" /></a>
                                     </div>
                                 </div>
                             </div>

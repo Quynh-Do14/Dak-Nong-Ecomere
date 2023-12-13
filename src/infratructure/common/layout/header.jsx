@@ -4,7 +4,7 @@ import LoginPopup from '../popup/login-popup';
 import LoadingFullPage from '../controls/loading';
 import { ROUTE_PATH } from '../../../core/common/appRouter';
 import { SuccessMessage } from '../toast/toastMessage';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ConfirmModal from '../popup/confirm-modal';
 import RegisterPopup from '../popup/register-modal';
 
@@ -16,6 +16,8 @@ const HeaderPage = () => {
 
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    let pathname = location.pathname;
     const onOpenMobileMenu = () => {
         setIsOpenMobileMenu(true);
     }
@@ -62,19 +64,19 @@ const HeaderPage = () => {
             <header className="header-area header-two transparent-header bg-black menu-desktop">
                 <div className="header-navigation navigation-white">
                     <div className="nav-overlay"></div>
-                    <div className="container-fluid menu-desktop-bg position-fixed white-space-nowrap ">
+                    <div className="container-fluid bg-light menu-desktop-bg position-fixed white-space-nowrap ">
                         <div className="primary-menu">
                             <div className="site-branding">
-                                <a href="index.html" className="brand-logo">
-                                    <img src="assets/images/logo/logo-white.png" alt="Site Logo" />
+                                <a href={ROUTE_PATH.HOME_PAGE} className="brand-logo">
+                                    <img src="assets/images/logo/logo-black.png" alt="Site Logo" />
                                 </a>
                             </div>
                             <div className="nav-menu">
 
                                 <nav className="main-menu">
-                                    <ul>
+                                    <ul className='mb-0'>
                                         {Constants.Menu.List.map((it, index) => (
-                                            <li key={index} className="menu-item has-children"><a href={it.link}>{it.label}</a>
+                                            <li key={index} className="menu-item active has-children"><a className={`${pathname == it.link ? "active" : "color-black"}`} href={it.link}>{it.label}</a>
                                             </li>
                                         ))}
                                     </ul>
@@ -85,7 +87,7 @@ const HeaderPage = () => {
                                     storage
                                         ?
                                         <div className="menu-button d-xl-block d-none">
-                                            <a onClick={onOpenModalLogout} className="main-btn primary-btn">Đăng xuất
+                                            <a onClick={onOpenModalLogout} className="main-btn primary-btn ">Đăng xuất
                                                 <i>
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
                                                 </i>
@@ -93,7 +95,7 @@ const HeaderPage = () => {
                                         </div>
                                         :
                                         <div className="menu-button d-xl-block d-none">
-                                            <a onClick={onOpenPopupLogin} className="main-btn primary-btn">Đăng nhập
+                                            <a onClick={onOpenPopupLogin} className="main-btn primary-btn color-white">Đăng nhập
                                                 <i>
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
                                                 </i>
@@ -113,7 +115,7 @@ const HeaderPage = () => {
                     <div className="container-fluid">
                         <div className="primary-menu d-flex justify-content-between">
                             <div className="site-branding">
-                                <a href="index.html" className="brand-logo">
+                                <a href={ROUTE_PATH.HOME_PAGE} className="brand-logo">
                                     <img src="assets/images/logo/logo-black.png" alt="Site Logo" />
                                 </a>
                             </div>
@@ -144,7 +146,7 @@ const HeaderPage = () => {
 
                             <ul className='d-flex flex-column'>
                                 {Constants.Menu.List.map((it, index) => (
-                                    <li key={index} className="menu-item menu-item-mobile has-children text-start"><a href={it.link}>{it.label}</a>
+                                    <li key={index} className="menu-item menu-item-mobile has-children text-start"><a className={`${pathname == it.link ? "active" : "color-black"}`} href={it.link}>{it.label}</a>
                                     </li>
                                 ))}
                                 <li>
@@ -152,7 +154,7 @@ const HeaderPage = () => {
                                         storage
                                             ?
                                             <div className="menu-button mt-40 d-xl-none pointer">
-                                                <a onClick={onOpenModalLogout} className="main-btn secondary-btn">Đăng kí
+                                                <a onClick={onOpenModalLogout} className="main-btn secondary-btn color-white">Đăng kí
                                                     <i>
                                                         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
                                                     </i>
@@ -160,7 +162,7 @@ const HeaderPage = () => {
                                             </div>
                                             :
                                             <div className="menu-button mt-40 d-xl-none pointer">
-                                                <a onClick={onOpenPopupLogin} className="main-btn secondary-btn">Đăng nhập
+                                                <a onClick={onOpenPopupLogin} className="main-btn secondary-btn color-white">Đăng nhập
                                                     <i>
                                                         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="20" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
                                                     </i>

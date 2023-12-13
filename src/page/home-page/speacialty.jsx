@@ -23,7 +23,7 @@ const Speacialty = ({ data = [] }) => {
                 <div className="row justify-content-center">
                     {data.map((it, index) => (
                         <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                            <div className="single-blog-post-three mb-40">
+                            <div className="single-blog-post-three mb-40 single-service-item ">
                                 <div className="post-thumbnail">
                                     <img src={
                                         it.hinhAnh?.indexOf("http") == -1
@@ -36,7 +36,7 @@ const Speacialty = ({ data = [] }) => {
                                 <div className="entry-content">
                                     <div className="post-meta">
                                         <h3 className="title text-truncate-title">{it.tenDiaDiem} </h3>
-                                        <p className='text-truncate'>{it.moTa} </p>
+                                        <p className='text-truncate-7-5'>{it.moTa} </p>
                                         <a style={{ marginTop: "20px" }} onClick={() => onNavigate(it.idDiaDiem)} className="main-btn filled-btn">Xem thêm<i className="far fa-paper-plane"></i></a>
                                     </div>
                                 </div>

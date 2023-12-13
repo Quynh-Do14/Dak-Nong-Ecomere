@@ -173,7 +173,7 @@ export const HomePage = () => {
                     </div>
                 </section>
                 {/* //////////// */}
-                <section className="about-section bg_cover pt-165 pb-210" style={{ backgroundImage: "url(assets/images/bg/about-bg-1.jpg)" }}>
+                <section className="about-section bg_cover pt-50 pb-50" style={{ backgroundColor: "#FFF", backgroundImage: "url(assets/images/bg/map2.png)" }} >
                     <div className="container">
                         <div className="row align-items-xl-center">
                             <div className="col-lg-6">
@@ -184,9 +184,9 @@ export const HomePage = () => {
                             <div className="col-lg-6">
                                 <div className="about-content-box text-white pl-lg-40 mb-50">
                                     <div className="section-title mb-30">
-                                        <h2>Những địa điểm du lịch mới lạ </h2>
+                                        <h2 className='color-black'>Những địa điểm du lịch mới lạ </h2>
                                     </div>
-                                    <p className="mb-30">
+                                    <p className="mb-30 color-black">
                                         Nơi đây được thiên nhiên ưu đãi với nhiều cảnh quan thiên nhiên tươi đẹp, hùng vĩ cùng với nền văn hóa bản địa độc đáo
                                     </p>
                                 </div>
