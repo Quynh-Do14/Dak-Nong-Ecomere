@@ -11,7 +11,7 @@ const Speacialty = ({ data = [] }) => {
         navigate(`${(ROUTE_PATH.VIEW_SPECIALTY)}?${id}`)
     }
     return (
-        <section className="blog-section pt-100 pb-60">
+        <section className="blog-section pt-100 pb-60 bg-linear-green">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-7">

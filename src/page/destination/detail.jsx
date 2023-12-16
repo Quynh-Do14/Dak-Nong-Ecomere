@@ -72,8 +72,8 @@ const DestinationDetail = () => {
                                 </span></li>
                                 <li><span><i className="fas fa-badge-check"></i>Địa điểm: {detailDestination.tenDanhMuc} </span></li>
                                 <li><span><i className="fas fa-usd-circle"></i>Giá vé: {detailDestination.giaVe === Constants.FreePrice || Constants.Undefined ? detailDestination.giaVe : `Chỉ từ: ${detailDestination.giaVe}`}</span></li>
-                                <li><span><i class="fas fa-envelope"></i>Email liên hệ:{detailDestination.emailLienHe} </span></li>
-                                <li><span><i class="fas fa-phone"></i>Số điện thoại: {detailDestination.sdtLienHe} </span></li>
+                                <li><span><i className="fas fa-envelope"></i>Email liên hệ:{detailDestination.emailLienHe} </span></li>
+                                <li><span><i className="fas fa-phone"></i>Số điện thoại: {detailDestination.sdtLienHe} </span></li>
                                 <li><span><i className="fas fa-map-marker-alt"></i>{detailDestination.diaChi}</span></li>
                             </ul>
                         </div>

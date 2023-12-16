@@ -64,7 +64,7 @@ const HeaderPage = () => {
             <header className="header-area header-two transparent-header bg-black menu-desktop">
                 <div className="header-navigation navigation-white">
                     <div className="nav-overlay"></div>
-                    <div className="container-fluid bg-light menu-desktop-bg position-fixed white-space-nowrap ">
+                    <div className="container-fluid bg-light box-shadow position-fixed white-space-nowrap ">
                         <div className="primary-menu">
                             <div className="site-branding">
                                 <a href={ROUTE_PATH.HOME_PAGE} className="brand-logo">

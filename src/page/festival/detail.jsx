@@ -63,8 +63,8 @@ const FestivalDetail = () => {
                                     <i className="far fa-clock"></i>Thời gian: {convertDateOnly(detailFestival.gioMoCua)} - {convertDateOnly(detailFestival.gioDongCua)}
                                 </span></li>
                                 <li><span><i className="fas fa-usd-circle"></i>Giá vé: {detailFestival.giaVe === Constants.FreePrice || Constants.Undefined ? detailFestival.giaVe : `Chỉ từ: ${detailFestival.giaVe}`}</span></li>
-                                <li><span><i class="fas fa-envelope"></i>Email liên hệ:{detailFestival.emailLienHe} </span></li>
-                                <li><span><i class="fas fa-phone"></i>Số điện thoại: {detailFestival.sdtLienHe} </span></li>
+                                <li><span><i className="fas fa-envelope"></i>Email liên hệ:{detailFestival.emailLienHe} </span></li>
+                                <li><span><i className="fas fa-phone"></i>Số điện thoại: {detailFestival.sdtLienHe} </span></li>
                                 <li><span><i className="fas fa-map-marker-alt"></i>{detailFestival.diaChi}</span></li>
                             </ul>
                         </div>

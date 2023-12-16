@@ -12,7 +12,7 @@ const Articles = ({ data = [] }) => {
     }
 
     return (
-        <section className="activity-section-four pt-100 pb-100 bg-body pb-60">
+        <section className="activity-section-four pt-100 pb-100 bg-linear-green pb-60">
             <div className="row justify-content-center">
                 <div className="col-xl-7">
                     <div className="section-title text-center text-white mb-45 wow fadeInDown">

@@ -6330,10 +6330,12 @@ form.comment-form .form_control:focus {
 
 .footer-widget h4.widget-title {
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .footer-widget .footer-content p {
   margin-bottom: 30px;
+  color: #fff;
 }
 
 .service-nav-widget .footer-content {

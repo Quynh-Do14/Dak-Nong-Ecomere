@@ -6,13 +6,13 @@ const SearchArticle = (props) => {
         onChangeSearchText,
     } = props
     return (
-        <div class="sidebar-widget-area">
-            <div class="sidebar-widget search-widget mb-30 wow fadeInUp">
-                <h4 class="widget-title">Tim kiếm bài viết</h4>
+        <div className="sidebar-widget-area">
+            <div className="sidebar-widget search-widget mb-30 wow fadeInUp bg-white">
+                <h4 className="widget-title">Tim kiếm bài viết</h4>
                 <form>
-                    <div class="form_group mb-20">
+                    <div className="form_group mb-20">
                         <span className='d-flex justify-contnet-start mb-10'>Tên bài viết </span>
-                        <input value={searchText} onChange={onChangeSearchText} type="text" class="form_control" placeholder="Tên bài viết" name="search" required />
+                        <input value={searchText} onChange={onChangeSearchText} type="text" className="form_control" placeholder="Tên bài viết" required />
                     </div>
                 </form>
             </div>

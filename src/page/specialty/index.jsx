@@ -67,7 +67,7 @@ const SpecialtyPage = () => {
                 redirectPage={"Trang chủ"}
                 currentPage={"Đặc sản"}
             />
-            <section className="blog-list-section pt-100 pb-70">
+            <section className="blog-list-section pt-100 pb-70 bg-light">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-8">
@@ -88,7 +88,7 @@ const SpecialtyPage = () => {
                                             <div className="post-meta">
                                                 <span><a>{it.diaChi} </a></span>
                                             </div>
-                                            <span> <i class="far fa-eye"></i> <a>Lượt xem ({it.luotXem})</a></span>
+                                            <span> <i className="far fa-eye"></i> <a>Lượt xem ({it.luotXem})</a></span>
                                             <div>{ViewStarCommon(convertNumber(it.soSaoTrungBinh))}</div>
                                             <p className=' text-truncate mb-10'>{it.moTa} </p>
                                             <a href={`${ROUTE_PATH.VIEW_SPECIALTY}?${it.idDiaDiem}`} className="main-btn filled-btn">Xem thêm <i className="fas fa-paper-plane"></i></a>

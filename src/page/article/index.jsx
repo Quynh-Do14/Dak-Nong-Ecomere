@@ -62,7 +62,7 @@ const ArticlePage = () => {
                 redirectPage={"Trang chủ"}
                 currentPage={"Bài viết"}
             />
-            <section className="blog-list-section pt-100 pb-70">
+            <section className="blog-list-section pt-100 pb-70 bg-light">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-8">
@@ -83,7 +83,7 @@ const ArticlePage = () => {
                                                 <span><i className="far fa-calendar-alt"></i><a>{convertDateOnly(it.ngayDang)} </a></span>
                                             </div>
                                             <h3 className="title"><a>{it.tieuDe} </a></h3>
-                                            <span> <i class="far fa-eye"></i> <a>Lượt xem ({it.luotXem})</a></span>
+                                            <span> <i className="far fa-eye"></i> <a>Lượt xem ({it.luotXem})</a></span>
                                             <div>{ViewStarCommon(convertNumber(it.soSaoTrungBinh))}</div>
                                             <p className=' text-truncate mb-10'>{it.moTaNgan} </p>
                                             <a href={`${ROUTE_PATH.VIEW_ARTICLE}?${it.idTinTuc}`} className="main-btn filled-btn">Xem thêm <i className="fas fa-paper-plane"></i></a>

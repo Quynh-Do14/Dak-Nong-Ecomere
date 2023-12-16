@@ -100,7 +100,7 @@ const DestinationPage = () => {
                 dsDanhMucDiaDiem={dsDanhMucDiaDiem}
                 onSelectDanhMuc={onSelectDanhMuc}
                 onSelectQuanHuyen={onSelectQuanHuyen} />
-            <section className="places-section pb-100">
+            <section className="places-section pb-100 bg-light">
                 <div className="container">
                     <div className="row ">
                         {listDiaDiem.map((it, index) => (

@@ -76,7 +76,7 @@ const FestivalPage = () => {
                 redirectPage={"Trang chủ"}
                 currentPage={"Lễ hội"}
             />
-            <section className="blog-list-section pt-100 pb-70">
+            <section className="blog-list-section pt-100 pb-70 bg-light">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-8">
@@ -97,7 +97,7 @@ const FestivalPage = () => {
                                             <div className="post-meta">
                                                 <span><i className="far fa-calendar-alt"></i><a>{convertDateOnly(it.gioMoCua)} - {convertDateOnly(it.gioDongCua)} </a></span>
                                             </div>
-                                            <span> <i class="far fa-eye"></i> <a>Lượt xem ({it.luotXem})</a></span>
+                                            <span> <i className="far fa-eye"></i> <a>Lượt xem ({it.luotXem})</a></span>
                                             <div>{ViewStarCommon(convertNumber(it.soSaoTrungBinh))}</div>
                                             <p className=' text-truncate mb-10'>{it.moTa} </p>
                                             <a href={`${ROUTE_PATH.VIEW_FESTIVAL}?${it.idDiaDiem}`} className="main-btn filled-btn">Xem thêm <i className="fas fa-paper-plane"></i></a>

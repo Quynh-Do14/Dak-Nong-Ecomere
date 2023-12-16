@@ -9630,6 +9630,17 @@ fieldset:disabled .btn {
     background-image: var(--bs-gradient) !important
 }
 
+.bg-radial-green {
+    background-image: radial-gradient(#c3ffe900, #93f8aa);
+}
+
+.bg-linear-green {
+    background-image: linear-gradient(#abf8bdb0, #c3ffe900);
+}
+
+.bg-linear-green-reverse{
+    background-image: linear-gradient(#ffffff00, #abf8bdb0);
+}
 .user-select-all {
     -webkit-user-select: all !important;
     -moz-user-select: all !important;
@@ -13622,4 +13633,5 @@ fieldset:disabled .btn {
 .width-full {
     width: 100% !important;
 }
+
 /*# sourceMappingURL=bootstrap.min.css.map */

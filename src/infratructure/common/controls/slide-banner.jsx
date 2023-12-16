@@ -18,24 +18,24 @@ const SlideBanner = () => {
 
 
     return (
-        <section class="hero-section bg-white">
-            <div class="hero-wrapper-four">
-                <div class="shape"><span><img src="assets/images/hero/map.png" alt="" /></span></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-7">
-                            <div class="hero-content">
-                                <span class="sub-title wow fadeInUp" data-wow-delay=".3s">Du lịch & Trải nghiệm</span>
-                                <h1 class="wow fadeInDown" data-wow-delay=".5s">Chào mừng đến với Đắk Nông</h1>
-                                <p class="wow fadeInUp" data-wow-delay=".6s">Tận hưởng mọi khoảnh khắc của chuyến đi của bạn.<br />
+        <section className="hero-section bg-radial-green">
+            <div className="hero-wrapper-four">
+                <div className="shape"><span><img src="assets/images/hero/map.png" alt="" /></span></div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-7">
+                            <div className="hero-content">
+                                <span className="sub-title wow fadeInUp" data-wow-delay=".3s">Du lịch & Trải nghiệm</span>
+                                <h1 className="wow fadeInDown" data-wow-delay=".5s">Chào mừng đến với Đắk Nông</h1>
+                                <p className="wow fadeInUp" data-wow-delay=".6s">Tận hưởng mọi khoảnh khắc của chuyến đi của bạn.<br />
                                     Một chuyến đi không chỉ là sự di chuyển, đó là một hành trình trải nghiệm</p>
                                 <div className="hero-button" data-animation="fadeInRight" data-delay=".6s">
                                     <a href={ROUTE_PATH.DESTINATION} className="main-btn primary-btn">Khám phá ngay<i className="fas fa-paper-plane"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 d-xl-block d-none">
-                            <div class="hero-image wow fadeInRight" data-wow-delay=".8s">
+                        <div className="col-xl-5 d-xl-block d-none">
+                            <div className="hero-image wow fadeInRight" data-wow-delay=".8s">
                                 <img src={slide} alt="hero image" />
                             </div>
                         </div>

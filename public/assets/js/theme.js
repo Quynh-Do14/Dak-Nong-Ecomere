@@ -59,7 +59,7 @@
         navMenu.find("li a").each(function() {
             if ($(this).children('.dd-trigger').length < 1) {
                 if ($(this).next().length > 0) {
-                    $(this).append('<span class="dd-trigger"><i class="far fa-angle-down"></i></span>')
+                    $(this).append('<span className="dd-trigger"><i className="far fa-angle-down"></i></span>')
                 }
             }
         });
@@ -207,8 +207,8 @@
             autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="fal fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="fal fa-arrow-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="fal fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="fal fa-arrow-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1200,
@@ -230,8 +230,8 @@
             autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-arrow-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-arrow-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1024,
@@ -255,8 +255,8 @@
             autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-arrow-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-arrow-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 991,
@@ -276,8 +276,8 @@
             autoplay: true,
             slidesToShow: 3,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-angle-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-angle-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1200,
@@ -309,8 +309,8 @@
             autoplay: true,
             slidesToShow: 3,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-angle-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-angle-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1200,
@@ -342,8 +342,8 @@
             autoplay: true,
             slidesToShow: 4,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-angle-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-angle-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1400,
@@ -375,8 +375,8 @@
             autoplay: true,
             slidesToShow: 5,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-arrow-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-arrow-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1400,
@@ -415,8 +415,8 @@
             variableWidth: true,
             slidesToShow: 3,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-arrow-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-arrow-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 767,
@@ -438,8 +438,8 @@
             appendArrows: sliderArrows,
             slidesToShow: 2,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-arrow-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-arrow-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 767,
@@ -459,8 +459,8 @@
             autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-arrow-right"></i></div>'
+            prevArrow: '<div className="prev"><i className="far fa-arrow-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-arrow-right"></i></div>'
         });
     }
     if ($('.product-big-slider').length) {
@@ -473,8 +473,8 @@
             asNavFor: '.product-thumb-slider',
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>'
+            prevArrow: '<div className="prev"><i className="far fa-angle-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-angle-right"></i></div>'
         });
     }
     if ($('.product-thumb-slider').length) {
@@ -487,8 +487,8 @@
             focusOnSelect: true,
             slidesToShow: 3,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>'
+            prevArrow: '<div className="prev"><i className="far fa-angle-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-angle-right"></i></div>'
         });
     }
     if ($('.partner-slider-one').length) {
@@ -500,8 +500,8 @@
             autoplay: true,
             slidesToShow: 5,
             slidesToScroll: 1,
-            prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
-            nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
+            prevArrow: '<div className="prev"><i className="far fa-angle-left"></i></div>',
+            nextArrow: '<div className="next"><i className="far fa-angle-right"></i></div>',
             responsive: [
                 {
                     breakpoint: 1400,
@@ -576,8 +576,8 @@
             date:new Date(),
             showTodayButton:false,
             weekDayLength: 2,
-            prevButton:"<i class='far fa-angle-left'></i>",
-            nextButton:"<i class='far fa-angle-right'></i>"
+            prevButton:"<i className='far fa-angle-left'></i>",
+            nextButton:"<i className='far fa-angle-right'></i>"
         });
     }
 

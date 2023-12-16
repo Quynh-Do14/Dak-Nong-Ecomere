@@ -9,16 +9,16 @@ const SearchSpecialty = (props) => {
     } = props
     return (
         <div className="sidebar-widget-area">
-            <div className="sidebar-widget search-widget mb-30 wow fadeInUp">
+            <div className="sidebar-widget search-widget mb-30 wow fadeInUp bg-white">
                 <h4 className="widget-title">Tim kiếm</h4>
                 <form>
                     <div className="form_group mb-20">
                         <span className='d-flex justify-contnet-start mb-10'>Tên đặc sản</span>
-                        <input value={searchText} onChange={onChangeSearchText} type="text" className="form_control" placeholder="Nhập tên đặc sản..." name="search" required />
+                        <input value={searchText} onChange={onChangeSearchText} type="text" className="form_control" placeholder="Nhập tên đặc sản..." required />
                     </div>
                     <div className="form_group mb-20">
                         <span className='d-flex justify-contnet-start mb-10'>Quận huyện</span>
-                        <select onChange={onChangeQH} className="form_control" placeholder="Ngày đăng" name="search" required>
+                        <select onChange={onChangeQH} className="form_control" placeholder="Ngày đăng" required>
                             <option value={""}>Quận huyện </option>
                             {dsQuanHuyen?.map((it, index) => (
                                 <option key={index} value={it.idQuanHuyen}>{it.tenQuanHuyen} </option>

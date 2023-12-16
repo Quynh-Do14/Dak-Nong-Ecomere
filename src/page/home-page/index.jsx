@@ -210,7 +210,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </section> */}
-                <section className="who-we-section pt-100 pb-50">
+                <section className="who-we-section pt-100 pb-50 bg-white">
                     <div className="container">
                         <div className="row align-items-xl-center">
                             <div className="col-xl-5 order-2 order-xl-1">
@@ -262,7 +262,7 @@ export const HomePage = () => {
                 <Destination data={listDiaDiem} />
                 <Festival data={listLeHoi} />
                 {/* //////////// */}
-                <section className="about-section pt-100 pb-50">
+                <section className="about-section pt-100 pb-50 bg-linear-green-reverse">
                     <div className="container">
                         <div className="row align-items-xl-center">
                             <div className="col-lg-6">

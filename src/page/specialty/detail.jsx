@@ -57,8 +57,8 @@ const SpecialtyDetail = () => {
                             <h3>Tại sao nên chọn {detailSpecialty.tenDiaDiem}</h3>
                             <p>{detailSpecialty.moTa} </p>
                             <ul className="features-list mb-40">
-                                <li><span><i class="fas fa-envelope"></i>Email liên hệ:{detailSpecialty.emailLienHe} </span></li>
-                                <li><span><i class="fas fa-phone"></i>Số điện thoại: {detailSpecialty.sdtLienHe} </span></li>
+                                <li><span><i className="fas fa-envelope"></i>Email liên hệ:{detailSpecialty.emailLienHe} </span></li>
+                                <li><span><i className="fas fa-phone"></i>Số điện thoại: {detailSpecialty.sdtLienHe} </span></li>
                                 <li><span><i className="fas fa-map-marker-alt"></i>{detailSpecialty.diaChi}</span></li>
                             </ul>
                         </div>

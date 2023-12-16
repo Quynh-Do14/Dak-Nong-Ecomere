@@ -44,13 +44,13 @@ const AritcleDetail = () => {
                 redirectPage={"Bài viết"}
                 currentPage={"Chi tiết bài viết"}
             />
-            <section class="blog-details-section pt-100 pb-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="blog-details-wrapper pr-lg-50">
-                                <div class="blog-post mb-60 wow fadeInUp">
-                                    <div class="post-thumbnail">
+            <section className="blog-details-section pt-100 pb-70">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-8">
+                            <div className="blog-details-wrapper pr-lg-50">
+                                <div className="blog-post mb-60 wow fadeInUp">
+                                    <div className="post-thumbnail">
                                         <img src={
                                             detailArticle.hinhAnh?.indexOf("http") == -1
                                                 ?
@@ -59,18 +59,18 @@ const AritcleDetail = () => {
                                                 detailArticle.hinhAnh
                                         } alt="Image" className='object-cover' />
                                     </div>
-                                    <div class="post-meta text-center pt-25 pb-15 mb-25">
-                                        <span><i class="far fa-user"></i><a></a></span>
+                                    <div className="post-meta text-center pt-25 pb-15 mb-25">
+                                        <span><i className="far fa-user"></i><a></a></span>
                                         <span><i className="far fa-calendar-alt"></i><a>{convertDateOnly(detailArticle.ngayDang)} </a></span>
-                                        <span> <i class="far fa-eye"></i> <a>Lượt xem ({detailArticle.luotXem})</a></span>
+                                        <span> <i className="far fa-eye"></i> <a>Lượt xem ({detailArticle.luotXem})</a></span>
                                     </div>
-                                    <div class="main-post">
-                                        <div class="entry-content">
-                                            <h3 class="title">{detailArticle.tieuDe} </h3>
+                                    <div className="main-post">
+                                        <div className="entry-content">
+                                            <h3 className="title">{detailArticle.tieuDe} </h3>
                                             <p>{detailArticle.tieuDeCon} </p>
                                             <div className='post-meta mb-20'></div>
                                             <h6>{detailArticle.moTaNgan} </h6>
-                                            <blockquote class="block-quote">
+                                            <blockquote className="block-quote">
                                                 <img src="assets/images/blog/quote.png" alt="quote image" />
                                                 <h6 className='text-align-left'>{detailArticle.chiTiet} </h6>
                                                 <span></span>
@@ -80,7 +80,7 @@ const AritcleDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4">
+                        <div className="col-xl-4">
                             <RelationArticle
                                 title={"Bài viết liên quan"}
                                 data={listTinTucLienQuan} />
